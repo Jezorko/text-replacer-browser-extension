@@ -1,3 +1,10 @@
+const dynamicImport = async (fileName) => await import(chrome.runtime.getURL(fileName));
+
+(async () => {
+    const {test} = await dynamicImport('scripts/test.js');
+    console.log(test);
+})();
+
 chrome.storage.local.get(configuration => {
     const emptyMatch = {
         value: '',
