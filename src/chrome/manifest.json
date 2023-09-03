@@ -4,7 +4,7 @@
   "description": "Configurable extension for replacing text",
   "version": "1.0",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "pages/popup.html"
   },
   "icons": {
     "16": "images/icon-16.png",
@@ -12,15 +12,18 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
-  "permissions": [
-    "scripting",
-    "tabs"
-  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "options_page": "pages/options.html",
   "host_permissions": [
     "http://*/*",
     "https://*/*"
   ],
-  "background": {
-    "service_worker": "add_tooltips_execute.js"
-  }
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs"
+  ]
 }
