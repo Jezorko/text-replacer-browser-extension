@@ -1,7 +1,7 @@
 import {defaultConfiguration} from '../data/default_configuration.js';
 
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set(defaultConfiguration);
+    chrome.storage.local.set({configuration: defaultConfiguration});
 });
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
